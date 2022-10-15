@@ -53,9 +53,23 @@ namespace HangMan2
         {
             string[] words = new string[]
             {
-                "Hallo",
-                "nein",
-                "Alligathoa"
+                "Gesetzesgeber",
+                "Teufelsbahn",
+                "Sushi",
+                "kleinigkeiten",
+                "geburtskanal",
+                "Fischfutter",
+                "gurgeln",
+                "halteverbot",
+                "Turbo",
+                "überhohlen",
+                "ängstlich",
+                "magendarm",
+                "fiasko",
+                "idioten",
+                "liedermacher",
+                "faultier",
+                "gürtelrose"
             };
 
             Random random = new Random();
@@ -71,7 +85,7 @@ namespace HangMan2
         {
             int lives = 10;
             string frontchar = "";
-            char[] letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z' };
+            char[] letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ä', 'ö', 'ü' };
             string hiddenword = "";
 
             for (int i = 0; i < lives; i++)
