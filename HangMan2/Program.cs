@@ -100,7 +100,12 @@ namespace HangMan2
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Gesuchtes Wort: " + hiddenword);
+                Console.WriteLine("Gesuchtes Wort: ");
+                for (int s = 0; s <hiddenword.Length; s++)
+                {
+                    Console.Write(hiddenword[s] + " ");
+                }
+                Console.WriteLine();
                 Console.Write("noch übrige Versuche:");
                 for (int i = 0; i < lives; i++)
                 {
@@ -150,6 +155,7 @@ namespace HangMan2
                         if (word[j] == charakter)
                         {
                             hiddenword += charakter;
+                            
                         }
                         else if (tempHiddenWord[j] != '_')
                         {
