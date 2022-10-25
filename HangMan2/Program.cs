@@ -87,6 +87,7 @@ namespace HangMan2
             string frontchar = "";
             char[] letters = { 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', 'ä', 'ö', 'ü' };
             string hiddenword = "";
+            char charakter;
 
             for (int i = 0; i < lives; i++)
             {
@@ -99,9 +100,11 @@ namespace HangMan2
 
             while (true)
             {
+
+
                 Console.Clear();
-                Console.WriteLine("Gesuchtes Wort: ");
-                for (int s = 0; s <hiddenword.Length; s++)
+                Console.Write("Gesuchtes Wort: ");
+                for (int s = 0; s < hiddenword.Length; s++)
                 {
                     Console.Write(hiddenword[s] + " ");
                 }
@@ -117,9 +120,17 @@ namespace HangMan2
                 Console.WriteLine("bereits benutzte Buchstaben: " + frontchar);
 
                 Console.WriteLine();
-                Console.Write("Buchstabe: ");
-                char charakter = Convert.ToChar(Console.ReadLine().ToLower());
-
+                try
+                {
+                    Console.Write("Buchstabe: ");
+                    charakter = Convert.ToChar(Console.ReadLine().ToLower());
+                }
+                catch (Exception e)
+                {
+                    Console.WriteLine(e.Message);
+                    Console.ReadKey();
+                    continue;
+                }
                 bool foundCharakterInWord = false;
                 bool showCharakter = false;
 
@@ -155,7 +166,7 @@ namespace HangMan2
                         if (word[j] == charakter)
                         {
                             hiddenword += charakter;
-                            
+
                         }
                         else if (tempHiddenWord[j] != '_')
                         {
@@ -198,7 +209,7 @@ namespace HangMan2
                     }
                 }
 
-                
+
 
                 if (showCharakter)
                 {
@@ -220,6 +231,10 @@ namespace HangMan2
 
                 }
             }
-            }
+
+
+
         }
     }
+}
+
